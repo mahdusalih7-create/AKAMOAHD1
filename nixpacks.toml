@@ -1,2 +1,16 @@
+# nixpacks.toml - تثبيت Lua 5.3 على Railway
 [phases.setup]
+# تثبيت Lua 5.3 باستخدام apt
 aptPkgs = ["lua5.3"]
+
+[phases.install]
+# تثبيت أي مكتبات Python المطلوبة من requirements.txt
+commands = ["pip install -r requirements.txt"]
+
+[phases.build]
+# لا نحتاج بناء، فقط نترك فارغ
+commands = []
+
+[phases.start]
+# أمر تشغيل البوت، يستخدم Procfile أو يمكن تحديده هنا مباشرة
+# عادة نقوم بتشغيل البوت من Procfile
